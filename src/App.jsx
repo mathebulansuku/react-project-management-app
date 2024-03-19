@@ -2,9 +2,9 @@ import Sidebar from "./components/SideBar";
 
 function App() {
   return (
-    <MutationObserver>
+    <main className="h-screen my-8">
       <Sidebar />
-    </MutationObserver>
+    </main>
   );
 }
 
