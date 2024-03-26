@@ -15,14 +15,25 @@ function App() {
     });
   }
 
+  function handleAddProject(projectData) {
+    setProjectState((prevState) => {
+      const newProject = { ...projectData, id: Math.random() };
+      return {
+        ...prevState,
+        projects: [...prevState.projects, newProject],
+      };
+    });
+  }
+
   let contentDisplay;
 
   if (projectState.selectedProjectId === null) {
-    contentDisplay = <NewProject />;
-  } else if (projectState.selectedProjectId === undefined)
+    contentDisplay = <NewProject onAdd={handleAddProject} />;
+  } else if (projectState.selectedProjectId === undefined) {
     contentDisplay = (
       <NoProjectSelected onStartAddProject={handleStartAddProject} />
     );
+  }
 
   return (
     <main className="h-screen my-8 flex gap-8">

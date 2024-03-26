@@ -9,7 +9,7 @@ export default function Sidebar({ onStartAddProject }) {
       <div>
         <Button onClick={onStartAddProject}>Add Project</Button>
       </div>
-      <ul></ul>
+      {/* <ul></ul> */}
     </aside>
   );
 }
